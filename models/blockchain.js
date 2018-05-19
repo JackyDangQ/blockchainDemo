@@ -38,6 +38,23 @@ class BlockChain {
   generateHash(block) {
     return sha256(block.key)
   }
+
+  isChainValid() {
+    for(let i = 1; i < this.blocks.length; i++) {
+      const currentBlock = this.blocks[i]
+      const previousBlock = this.blocks[i-1]
+      console.log(currentBlock.key)
+      console.log(this.generateHash(currentBlock))
+      if (currentBlock.hash !== this.generateHash(currentBlock)){
+          return false
+      }
+
+      if (currentBlock.previousHash !== previousBlock.hash) {
+          return false
+      }
+    }
+    return true
+  }
 }
 
 module.exports = BlockChain
