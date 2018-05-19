@@ -15,8 +15,8 @@ let secondBlockTransaction = new Transaction('quocdat', 'leanh', 150)
 let secondBlock = blockchain.getNextBlock([secondBlockTransaction])
 blockchain.addBlock(secondBlock)
 
-//console.log(blockchain)
-console.log('[Before] Is this blockchain valid? ' + blockchain.isChainValid())
-let secondBlockTransactionModified = new Transaction('quocdat', 'leanh', 100)
-blockchain.blocks[1].transactions = [secondBlockTransactionModified]
-console.log('[After] Is this blockchain valid? ' + blockchain.isChainValid())
+console.log(blockchain)
+// console.log('[Before] Is this blockchain valid? ' + blockchain.isChainValid())
+// let secondBlockTransactionModified = new Transaction('quocdat', 'leanh', 100)
+// blockchain.blocks[1].transactions = [secondBlockTransactionModified]
+// console.log('[After] Is this blockchain valid? ' + blockchain.isChainValid())
